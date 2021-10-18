@@ -19,6 +19,12 @@ public class RewardCentralController {
     @Autowired
     private RewardCentralService rewardCentralService;
 
+    /**
+     * Endpoint to retrieve the reward points value for an attraction for a specific user
+     * @param attractionId as String
+     * @param userId as String
+     * @return Integer the value of the reward
+     */
     @GetMapping("/getRewardPoints")
     public ResponseEntity<Integer> getAttractionRewardPoints(@RequestParam String attractionId, @RequestParam String userId){
         LOGGER.info("GET /getRewardPoints " + "attractionId = " + attractionId + ", userId = " + userId);
